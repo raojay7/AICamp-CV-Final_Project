@@ -33,6 +33,12 @@ RUN pip3 install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 RUN pip3 --no-cache-dir install --upgrade \
+        tornado \
+        Flask \
+        Flask-Bootstrap \
+        opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+        
+RUN pip3 --no-cache-dir install --upgrade \
         numpy==1.16.2 \
         scipy \
         matplotlib \
@@ -46,16 +52,12 @@ RUN pip3 --no-cache-dir install --upgrade \
         music21==5.1.0 \
         tensorboard \
         tensorflow==1.5.0 \
-        tornado\
         keras==2.1.4 \
         jupyter \
         jupyter-tensorboard \
         gym -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-RUN pip3 --no-cache-dir install --upgrade \
-        Flask \
-        Flask-Bootstrap \
-        opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 
 RUN git clone https://github.com/pybox2d/pybox2d && \
     cd pybox2d && \
