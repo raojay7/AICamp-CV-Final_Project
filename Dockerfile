@@ -46,6 +46,7 @@ RUN pip3 --no-cache-dir install --upgrade \
         music21==5.1.0 \
         tensorboard \
         tensorflow==1.5.0 \
+        tornado\
         keras==2.1.4 \
         jupyter \
         jupyter-tensorboard \
