@@ -30,8 +30,12 @@ RUN apt-get install -y --no-install-recommends \
 
 RUN pip3 install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+RUN pip3 uninstall pyzmq
 
 
+RUN pip3 --no-cache-dir install --upgrade \
+        pyzmq -i https://pypi.tuna.tsinghua.edu.cn/simple
+        
 RUN pip3 --no-cache-dir install --upgrade \
         tornado \
         Flask \
