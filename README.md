@@ -21,7 +21,7 @@ docker build -t face .
 Then, run the docker.
 
 ```
-docker run -it -p 5000:5000 face python app.py
+docker run -it -p 5000:5000 face python3 app.py
 ```
 
 ### For other users
