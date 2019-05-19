@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
 ENV LANG C.UTF-8
+ENV PYTHONUNBUFFERED 1
 RUN sed -i "s/archive.ubuntu./mirrors.aliyun./g" /etc/apt/sources.list 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -32,7 +33,7 @@ RUN pip3 install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 RUN pip3 --no-cache-dir install --upgrade \
-        numpy==1.13.0 \
+        numpy==1.16.2 \
         scipy \
         matplotlib \
         seaborn \
@@ -50,6 +51,11 @@ RUN pip3 --no-cache-dir install --upgrade \
         jupyter-tensorboard \
         gym -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+RUN pip3 --no-cache-dir install --upgrade \
+        Flask \
+        Flask-Bootstrap \
+        opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 RUN git clone https://github.com/pybox2d/pybox2d && \
     cd pybox2d && \
     python3 setup.py install && \
@@ -63,5 +69,6 @@ RUN git clone https://github.com/louisabraham/python3-midi && \
     rm -rf python3-midi
 
 WORKDIR /jupyter
-
+ADD . /jupyter/
+EXPOSE 5000
 CMD xvfb-run -s "-screen 0 640x480x24" jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --NotebookApp.token=''
