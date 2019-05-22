@@ -8,6 +8,22 @@ Download the [model](https://drive.google.com/open?id=1EXPBSXwTaqrSC0OhUdXNmKSh9
 cp /path/to/unzip/dir/* recognize/facenet_model
 ```
 
+## cpu version
+
+you can start the notebook server and access localhost:8888 (in case of Docker Toolbox, access 192.168.99.100:8888).
+```
+# start
+# Mac + GNU/Linux
+docker run --rm -d --name ann -p 8888:8888 -v "$(pwd):/jupyter" zifeo/artificial-neural-networks:cpu 
+# Windows (Command Prompt)
+docker run --rm -d --name ann -p 8888:8888 -v "%cd%:/jupyter" zifeo/artificial-neural-networks:cpu 
+# Windows (PowerShell)
+docker run --rm -d --name ann -p 8888:8888 -v "${PWD}:/jupyter" zifeo/artificial-neural-networks:cpu 
+
+# stop (do not forget)
+docker stop ann
+```
+
 ## Run
 
 ### For Docker users
