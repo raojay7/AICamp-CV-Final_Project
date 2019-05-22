@@ -46,7 +46,6 @@ RUN pip3 --no-cache-dir install --upgrade \
         numpy==1.16.2 \
         scipy \
         matplotlib \
-        Pillow \
         seaborn \
         pandas \
         h5py \
@@ -61,7 +60,9 @@ RUN pip3 --no-cache-dir install --upgrade \
         jupyter \
         jupyter-tensorboard \
         gym -i https://pypi.tuna.tsinghua.edu.cn/simple
-
+        
+RUN pip3 --no-cache-dir install --upgrade \       
+        Pillow -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 RUN git clone https://github.com/pybox2d/pybox2d && \
