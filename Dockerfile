@@ -33,7 +33,6 @@ RUN pip3 install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 RUN pip3 uninstall pyzmq
 
-
 RUN pip3 --no-cache-dir install --upgrade \
         pyzmq -i https://pypi.tuna.tsinghua.edu.cn/simple
         
@@ -47,6 +46,7 @@ RUN pip3 --no-cache-dir install --upgrade \
         numpy==1.16.2 \
         scipy \
         matplotlib \
+        pillow==2.6.0 \
         seaborn \
         pandas \
         h5py \
@@ -61,9 +61,6 @@ RUN pip3 --no-cache-dir install --upgrade \
         jupyter \
         jupyter-tensorboard \
         gym -i https://pypi.tuna.tsinghua.edu.cn/simple
-        
-RUN pip3 --no-cache-dir install --upgrade \       
-        pillow==2.6.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 RUN git clone https://github.com/pybox2d/pybox2d && \
