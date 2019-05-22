@@ -63,7 +63,7 @@ RUN pip3 --no-cache-dir install --upgrade \
         gym -i https://pypi.tuna.tsinghua.edu.cn/simple
         
 RUN pip3 --no-cache-dir install --upgrade \       
-        pillow -i https://pypi.tuna.tsinghua.edu.cn/simple
+        pillow==2.6.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 RUN git clone https://github.com/pybox2d/pybox2d && \
