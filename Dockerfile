@@ -46,6 +46,7 @@ RUN pip3 --no-cache-dir install --upgrade \
         numpy==1.16.2 \
         scipy \
         matplotlib \
+        Pillow \
         seaborn \
         pandas \
         h5py \
