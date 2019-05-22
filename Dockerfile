@@ -2,7 +2,8 @@ FROM ubuntu:16.04
 
 ENV LANG C.UTF-8
 ENV PYTHONUNBUFFERED 1
-RUN sed -i s@cn.archive.ubuntu.com@mirrors.ustc.edu.cn@g /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         software-properties-common \
